@@ -34,7 +34,7 @@ struct node
 typedef struct node Node;
 
 int rtn = 0;
-char prtn;
+char* prtn;
 char buff[4096];
 
 void addToList(char* input, Node* list){
@@ -60,7 +60,7 @@ int main()
                         current = Head;
                     }
                 if(current->command == NULL){
-                    current->command = strtouq(lexeme);
+                    current->command = strdup(lexeme);
                 }else{
                     addToList(lexeme, current);
                 }
