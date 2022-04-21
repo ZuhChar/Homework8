@@ -38,8 +38,18 @@ char* prtn;
 char buff[4096];
 
 void addToList(char* input, Node* list){
-    if(input != NULL){
-        list->command = input;
+    Word* tmp;
+    tmp=list->arg_list;
+    if(tmp==NULL) {
+        tmp=calloc(1,sizeof(Word));
+        tmp->string = strdup(input);
+        list->arg_list=tmp
+    }
+    else {
+        while(tmp->next != NULL) tmp=tmp->next;
+        tmp->next=calloc(1,sizeof(Word));
+        tmp->next->prev=tmp;
+        tmp->next->string=strdup(input);
     }
 }
 
@@ -67,7 +77,6 @@ int main()
                     addToList(lexeme, current);
                 }
                 printf(current->command);
-                rtn++;
                 break;
             }
         }
