@@ -60,7 +60,7 @@ int main()
                         current = Head;
                     }
                 if(current->command == NULL){
-                    current->command = strtup(lexeme);
+                    current->command = strtouq(lexeme);
                 }else{
                     addToList(lexeme, current);
                 }
