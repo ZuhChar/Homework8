@@ -67,6 +67,7 @@ int main()
                     addToList(lexeme, current);
                 }
                 printf(current->command);
+                rtn++;
                 break;
             }
         }
