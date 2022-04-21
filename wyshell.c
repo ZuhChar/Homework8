@@ -39,6 +39,7 @@ char buff[4096];
 
 void addToList(char* input, Node* list){
     list->node = input;
+    list = input;
 }
 
 int main()
