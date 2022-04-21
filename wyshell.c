@@ -10,7 +10,7 @@
 //
 
 #include <stdio.h>
-#include "wyscanner.h"
+#include "wyscanner.c"
 
 int main(){
     char input[4096];
