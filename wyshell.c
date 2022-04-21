@@ -13,12 +13,9 @@
 #include "wyscanner.c"
 
 int main(){
-    char input[4096];
+    char input[128];
     while(1){
         printf("$> ");
         parse_line(stdin);
-        if(){
-
-        }
     }
 }
