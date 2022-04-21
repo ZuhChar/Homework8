@@ -22,11 +22,11 @@ int main()
         while (1)
         {
             parse_line(word);
-            if (user_buffer == " ")
+            if (strcmp(user_buffer, " ") == 0)
             {
                 printf("\n");
             }
-            else if (user_buffer == ">")
+            else if (strcmp(user_buffer, ">") == 0)
             {
                 printf(">\n");
             }
