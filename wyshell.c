@@ -46,7 +46,7 @@ int main()
                 Head = calloc(1, sizeof(Node));
                 current = Head;
             }
-            printf(":--:%s", out);
+            printf(":--: %s", out);
             break;
         }
     }
