@@ -1,3 +1,14 @@
+// 
+// wyshell.c
+// Author: Zachary Crimmel
+// Date: Apr 20, 2022
+//
+// COSC 3750, Homework 8
+//
+// This is a shell program that was written in c
+// Collaborated with Ian Moon on this Homework
+//
+
 #include <stdio.h>
 #include "wyscanner.h"
 

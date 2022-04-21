@@ -1,11 +1,11 @@
 # 
 # Makefile
 # Author: Zachary Crimmel
-# Date: Apr 12, 2022
+# Date: Apr 20, 2022
 #
-# COSC 3750, Homework 7
+# COSC 3750, Homework 8
 #
-# This is a Makefile designed to compile the wytalkD.c and wytalkC.c file
+# This is a Makefile designed to compile the wyshell.c file
 # Collaborated with Ian Moon on this Homework
 #
 
