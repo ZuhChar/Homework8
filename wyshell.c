@@ -37,10 +37,12 @@ int main()
         printf("$> ");
         while (1)
         {
+            parse_line(fgets(input, 4096, stdin));
             if(Head == NULL){
                 Head = calloc(1, sizeof(Node));
                 current = Head;
             }
+            printf(input);
             break;
         }
     }
