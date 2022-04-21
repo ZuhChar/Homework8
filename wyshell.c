@@ -43,7 +43,7 @@ void addToList(char* input, Node* list){
     if(tmp==NULL) {
         tmp=calloc(1,sizeof(Word));
         tmp->string = strdup(input);
-        list->arg_list=tmp
+        list->arg_list=tmp;
     }
     else {
         while(tmp->next != NULL) tmp=tmp->next;
