@@ -12,8 +12,25 @@
 #include <stdio.h>
 #include "wyscanner.c"
 
+typedef struct node Node;
+typedef struct word Word;
+
+struct word {
+    struct word *next, *prev;
+    char *string;
+}
+
+struct node{
+    struct node *node, *prev;
+    char *command;
+    Word *arg_list;
+    int input, output, error;
+    char *in_file, *out_file, *err_file;
+}
+
 int main()
 {
+    Node *Head, *current = NULL;
     char input[4096];
     while (1)
     {
@@ -21,17 +38,11 @@ int main()
         while (1)
         {
             parse_line(fgets(input, 4096, stdin));
-            if (strcmp(user_buffer, " ") == 0)
-            {
-                printf("\n");
+            if(*Head == NULL){
+                Head = calloc(1, sizeof(Node));
+                current = Head;
             }
-            else if (strcmp(user_buffer, ">") == 0)
-            {
-                printf(">\n");
-            }
-            else{
-                printf(input);
-            }
+
             break;
         }
     }
