@@ -19,6 +19,8 @@ struct word
     char *string;
 };
 
+typedef struct word Word;
+
 struct node
 {
     struct node *node, *prev;
@@ -29,7 +31,6 @@ struct node
 };
 
 typedef struct node Node;
-typedef struct word Word;
 
 int rtn = 0;
 char prtn;
@@ -55,7 +56,7 @@ int main()
             case WORD:
                 if (Head == NULL) {
                         Head = calloc(1, sizeof(Node));
-                        current = Head
+                        current = Head;
                     }
                 if(current->command == NULL){
                     current->command = strtup(lexeme);
