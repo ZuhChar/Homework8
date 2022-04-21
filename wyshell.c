@@ -37,12 +37,9 @@ int main()
         printf("$> ");
         while (1)
         {
-            parse_line(fgets(commands->string, 4096, stdin));
             if(Head == NULL){
                 Head = calloc(1, sizeof(Node));
                 current = Head;
-            }else{
-                current = calloc(1, sizeof(Node));
             }
             printf("%s\n", current->command);
             break;
