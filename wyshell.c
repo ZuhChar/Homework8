@@ -1,4 +1,4 @@
-// 
+//
 // wyshell.c
 // Author: Zachary Crimmel
 // Date: Apr 20, 2022
@@ -12,11 +12,24 @@
 #include <stdio.h>
 #include "wyscanner.c"
 
-int main(){
+int main()
+{
     char input[4096];
-    while(1){
+    while (1)
+    {
         printf("$> ");
-        parse_line(fgets(input, 4096, stdin));
-        printf(input); 
+        const char word = fgets(input, 4096, stdin);
+        while (1)
+        {
+            parse_line(word);
+            if (user_buffer == " ")
+            {
+                printf("\n");
+            }
+            else if (user_buffer == ">")
+            {
+                printf(">\n");
+            }
+        }
     }
 }
