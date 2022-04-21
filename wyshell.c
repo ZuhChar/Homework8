@@ -38,7 +38,9 @@ char* prtn;
 char buff[4096];
 
 void addToList(char* input, Node* list){
-    list->command = input;
+    if(input != NULL){
+        list->command = input;
+    }
 }
 
 int main()
@@ -64,6 +66,7 @@ int main()
                 }else{
                     addToList(lexeme, current);
                 }
+                printf(current->command);
                 break;
             }
         }
