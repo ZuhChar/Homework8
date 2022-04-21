@@ -46,7 +46,7 @@ int main()
     while (1)
     {
         printf("$> ");
-        prtn = fgets(buff);
+        prtn = fgets(buff, stdin);
         Node *Head, *current = NULL;
         Word *commands = NULL;
         rtn = parse_line(buff);
