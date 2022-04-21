@@ -38,8 +38,7 @@ char* prtn;
 char buff[4096];
 
 void addToList(char* input, Node* list){
-    list->node = input;
-    list = input;
+    list->command = input;
 }
 
 int main()
