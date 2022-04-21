@@ -31,16 +31,18 @@ struct node{
 int main()
 {
     Node *Head, *current = NULL;
-    char input[4096];
+    Word *commands = NULL;
     while (1)
     {
         printf("$> ");
         while (1)
         {
-            parse_line(fgets(input, 4096, stdin));
+            parse_line(fgets(commands->string, 4096, stdin));
             if(Head == NULL){
                 Head = calloc(1, sizeof(Node));
                 current = Head;
+            }else{
+                current = calloc(1, sizeof(Node));
             }
             printf("%s\n", current->command);
             break;
