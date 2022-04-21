@@ -10,10 +10,8 @@
 //
 
 #include <stdio.h>
-#include "wyscanner.c"
+#include "wyscanner.h"
 
-typedef struct node Node;
-typedef struct word Word;
 
 struct word
 {
@@ -30,24 +28,42 @@ struct node
     char *in_file, *out_file, *err_file;
 };
 
+typedef struct node Node;
+typedef struct word Word;
+
+int rtn = 0;
+char prtn;
+int buff = 4096;
+
+void addToList(char* input, Node* list){
+    list->node = input;
+}
+
 int main()
 {
-    char out[4096];
-    Node *Head, *current = NULL;
-    Word *commands = NULL;
     while (1)
     {
         printf("$> ");
-        while (1)
+        prtn = fgets(buff);
+        Node *Head, *current = NULL;
+        Word *commands = NULL;
+        rtn = parse_line(buff);
+        while (rtn != EOL)
         {
-            parse_line(fgets(out, 4096, stdin));
-            if (Head == NULL)
+            switch (rtn)
             {
-                Head = calloc(1, sizeof(Node));
-                current = Head;
+            case WORD:
+                if (Head == NULL) {
+                        Head = calloc(1, sizeof(Node));
+                        current = Head
+                    }
+                if(current->command == NULL){
+                    current->command = strtup(lexeme);
+                }else{
+                    addToList(lexeme, current);
+                }
+                break;
             }
-            printf(":--: %s", out);
-            break;
         }
     }
 }

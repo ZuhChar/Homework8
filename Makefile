@@ -18,7 +18,7 @@ RM= rm -f
 all: wyshell
 
 wyshell: wyshell.c
-	${CC} ${CFLAGS} wyshell.c wyscanner.h -o wyshell
+	${CC} ${CFLAGS} wyshell.c wyscanner.c -o wyshell
 
 clean:
 	${RM} *.o wyshell
