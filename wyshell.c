@@ -18,10 +18,9 @@ int main()
     while (1)
     {
         printf("$> ");
-        const char word = fgets(input, 4096, stdin);
         while (1)
         {
-            parse_line(word);
+            parse_line(fgets(input, 4096, stdin));
             if (strcmp(user_buffer, " ") == 0)
             {
                 printf("\n");
@@ -30,6 +29,10 @@ int main()
             {
                 printf(">\n");
             }
+            else{
+                printf(input);
+            }
+            break;
         }
     }
 }
