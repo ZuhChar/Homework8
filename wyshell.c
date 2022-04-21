@@ -15,12 +15,14 @@
 typedef struct node Node;
 typedef struct word Word;
 
-struct word {
+struct word
+{
     struct word *next, *prev;
     char *string;
 };
 
-struct node{
+struct node
+{
     struct node *node, *prev;
     char *command;
     Word *arg_list;
@@ -30,6 +32,7 @@ struct node{
 
 int main()
 {
+    char out[4096];
     Node *Head, *current = NULL;
     Word *commands = NULL;
     while (1)
@@ -37,12 +40,13 @@ int main()
         printf("$> ");
         while (1)
         {
-            parse_line(fgets(input, 4096, stdin));
-            if(Head == NULL){
+            parse_line(fgets(out, 4096, stdin));
+            if (Head == NULL)
+            {
                 Head = calloc(1, sizeof(Node));
                 current = Head;
             }
-            printf(input);
+            printf(out);
             break;
         }
     }
