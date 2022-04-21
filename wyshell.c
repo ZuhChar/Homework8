@@ -18,7 +18,7 @@ typedef struct word Word;
 struct word {
     struct word *next, *prev;
     char *string;
-}
+};
 
 struct node{
     struct node *node, *prev;
@@ -26,7 +26,7 @@ struct node{
     Word *arg_list;
     int input, output, error;
     char *in_file, *out_file, *err_file;
-}
+};
 
 int main()
 {
