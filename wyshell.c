@@ -14,7 +14,6 @@
 #include <string.h>
 #include "wyscanner.h"
 
-
 struct word
 {
     struct word *next, *prev;
@@ -35,22 +34,26 @@ struct node
 typedef struct node Node;
 
 int rtn = 0;
-char* prtn;
+char *prtn;
 char buff[4096];
 
-void addToList(char* input, Node* list){
-    Word* tmp;
-    tmp=list->arg_list;
-    if(tmp==NULL) {
-        tmp=calloc(1,sizeof(Word));
+void addToList(char *input, Node *list)
+{
+    Word *tmp;
+    tmp = list->arg_list;
+    if (tmp == NULL)
+    {
+        tmp = calloc(1, sizeof(Word));
         tmp->string = strdup(input);
-        list->arg_list=tmp;
+        list->arg_list = tmp;
     }
-    else {
-        while(tmp->next != NULL) tmp=tmp->next;
-        tmp->next=calloc(1,sizeof(Word));
-        tmp->next->prev=tmp;
-        tmp->next->string=strdup(input);
+    else
+    {
+        while (tmp->next != NULL)
+            tmp = tmp->next;
+        tmp->next = calloc(1, sizeof(Word));
+        tmp->next->prev = tmp;
+        tmp->next->string = strdup(input);
     }
 }
 
@@ -68,17 +71,22 @@ int main()
             switch (rtn)
             {
             case WORD:
-                if (Head == NULL) {
-                        Head = calloc(1, sizeof(Node));
-                        current = Head;
-                    }
+                if (Head == NULL)
+                {
+                    Head = calloc(1, sizeof(Node));
+                    current = Head;
+                }
                 current = calloc(1, sizeof(struct node));
-                if(current->command == NULL){
+                if (current->command == NULL)
+                {
                     current->command = strdup(lexeme);
-                }else{
+                }
+                else
+                {
                     addToList(lexeme, current);
                 }
-                while (current != NULL){
+                commands = current->arg_list;
+                while (commands->next != NULL){
                     printf("%s\n", commands->string);
                     commands = commands->next;
                 }
