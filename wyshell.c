@@ -79,8 +79,8 @@ int main()
                     addToList(lexeme, current);
                 }
                 while (current != NULL){
-                    printf("%s\n", current->command);
-                    current = current->node;
+                    printf("%s\n", commands->string);
+                    commands = commands->next;
                 }
                 break;
             }
