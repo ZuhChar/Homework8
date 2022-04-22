@@ -85,6 +85,7 @@ int main()
                 {
                     addToList(lexeme, current);
                 }
+                commands = calloc(1, sizeof(struct word));
                 commands = current->arg_list;
                 while (commands->next != NULL){
                     printf("%s\n", commands->string);
