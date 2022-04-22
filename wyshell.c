@@ -72,6 +72,7 @@ int main()
                         Head = calloc(1, sizeof(Node));
                         current = Head;
                     }
+                current = calloc(1, sizeof(struct node));
                 if(current->command == NULL){
                     current->command = strdup(lexeme);
                 }else{
