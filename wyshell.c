@@ -96,6 +96,7 @@ int main()
                     commands = commands->next;
                 }
                 rtn++;
+                printf("Increased rtn");
                 break;
             }
         }
