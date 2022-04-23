@@ -94,6 +94,7 @@ int main()
                     printf("%s\n", commands->string);
                     commands = commands->next;
                 }
+                rtn++;
                 break;
             }
         }
