@@ -76,7 +76,7 @@ int main()
                     Head = calloc(1, sizeof(Node));
                     current = Head;
                 }
-                current = calloc(1, sizeof(struct node));
+                current = calloc(1, sizeof(Node));
                 if (current->command == NULL)
                 {
                     current->command = strdup(lexeme);
@@ -85,7 +85,7 @@ int main()
                 {
                     addToList(lexeme, current);
                 }
-                commands = calloc(1, sizeof(struct word));
+                commands = calloc(1, sizeof(Word));
                 commands = current->arg_list;
                 while (commands->next != NULL){
                     printf("%s\n", commands->string);
