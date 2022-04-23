@@ -35,7 +35,7 @@ typedef struct node Node;
 
 int rtn = 0;
 char *prtn;
-char buff;
+char buff[4096];
 
 void addToList(char *input, Node *list)
 {
