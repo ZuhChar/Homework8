@@ -66,6 +66,7 @@ int main()
         Node *Head, *current = NULL;
         Word *commands = NULL;
         rtn = parse_line(buff);
+        current = calloc(1, sizeof(Node));
         while (strcmp(current->command, "\n") != 0)
         {
             switch (rtn)
@@ -77,7 +78,7 @@ int main()
                     current = Head;
                     // printf("head created");
                 }
-                current = calloc(1, sizeof(Node));
+
                 if (current->command == NULL)
                 {
                     current->command = strdup(lexeme);
