@@ -83,14 +83,14 @@ int main()
                     current->command = strdup(lexeme);
                     printf("String duplicated");
                 }
-                else
-                {
-                    addToList(lexeme, current);
-                    printf("Command added to list");
-                }
+
+                addToList(lexeme, current);
+                printf("Command added to list");
+
                 commands = calloc(1, sizeof(Word));
                 commands = current->arg_list;
-                while (commands != NULL){
+                while (commands != NULL)
+                {
                     printf("%s\n", commands->string);
                     commands = commands->next;
                 }
