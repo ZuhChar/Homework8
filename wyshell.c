@@ -35,7 +35,7 @@ typedef struct node Node;
 
 int rtn = 0;
 char *prtn;
-char buff[4096];
+char buff;
 
 void addToList(char *input, Node *list)
 {
@@ -66,7 +66,7 @@ int main()
         Node *Head, *current = NULL;
         Word *commands = NULL;
         rtn = parse_line(buff);
-        while (rtn != EOL)
+        while (rtn < strlen(buff))
         {
             switch (rtn)
             {
