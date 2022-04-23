@@ -36,7 +36,6 @@ typedef struct node Node;
 int rtn = 0;
 char *prtn;
 char buff[4096];
-int i = 0;
 
 void addToList(char *input, Node *list)
 {
@@ -68,7 +67,7 @@ int main()
         Word *commands = NULL;
         rtn = parse_line(buff);
         current = calloc(1, sizeof(Node));
-        while (strcmp(buff[i], "\n") != 0)
+        while (strcmp(buff, "\n") != 0)
         {
             switch (rtn)
             {
@@ -97,7 +96,6 @@ int main()
                     printf("%s\n", commands->string);
                     commands = commands->next;
                 }
-                i++;
                 printf("Increased i");
                 break;
             }
