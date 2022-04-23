@@ -66,7 +66,7 @@ int main()
         Node *Head, *current = NULL;
         Word *commands = NULL;
         rtn = parse_line(buff);
-        while (rtn != "\n")
+        while (current->command != "\n")
         {
             switch (rtn)
             {
