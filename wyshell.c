@@ -100,7 +100,7 @@ int main()
                 }
                 printf("Increased i");
                 if(count == 20){
-                    break;
+                    return 0;
                 }else{
                     count++;
                 }
