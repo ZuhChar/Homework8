@@ -108,7 +108,6 @@ int main()
             default:
                 printf("Nothing happened no Word case");
             }
-            break;
         //}
     }
 }
