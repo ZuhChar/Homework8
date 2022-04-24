@@ -68,8 +68,8 @@ int main()
         rtn = parse_line(buff);
         current = calloc(1, sizeof(Node));
         int count = 0;
-        // while (1)
-        // {
+        while (1)
+        {
             switch (rtn)
             {
             case WORD:
@@ -108,6 +108,7 @@ int main()
             default:
                 printf("Nothing happened no Word case");
             }
-        //}
+            break;
+        }
     }
 }
