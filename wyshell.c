@@ -67,6 +67,7 @@ int main()
         Word *commands = NULL;
         rtn = parse_line(buff);
         current = calloc(1, sizeof(Node));
+        int count = 0;
         while (1)
         {
             switch (rtn)
@@ -98,8 +99,10 @@ int main()
                     commands = commands->next;
                 }
                 printf("Increased i");
-                if(current->command == "\n"){
+                if(count == 20){
                     break;
+                }else{
+                    count++;
                 }
                 break;
             default:
