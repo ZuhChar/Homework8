@@ -67,7 +67,7 @@ int main()
         Word *commands = NULL;
         rtn = parse_line(buff);
         current = calloc(1, sizeof(Node));
-        while (strcmp(buff, "\n") != 0)
+        while (1)
         {
             switch (rtn)
             {
@@ -98,6 +98,9 @@ int main()
                     commands = commands->next;
                 }
                 printf("Increased i");
+                if(current->command == "\n"){
+                    break;
+                }
                 break;
             default:
                 printf("Nothing happened no Word case");
