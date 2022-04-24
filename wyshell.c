@@ -99,6 +99,8 @@ int main()
                 }
                 printf("Increased i");
                 break;
+            default:
+                printf("Nothing happened no Word case");
             }
         }
     }
