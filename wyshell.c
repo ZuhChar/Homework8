@@ -95,6 +95,8 @@ int main()
                 }
                 count++;
                 // commands = head;
+            case REDIR_OUT:
+                printf("Redir_out detected");
             }
         }
         commands = calloc(1, sizeof(Word));
