@@ -69,7 +69,7 @@ int main()
         rtn = parse_line(buff);
         current = calloc(1, sizeof(Node));
         int count = 0;
-        while (count < rtn)
+        while (count < yylex())
         {
             switch (rtn)
             {
@@ -96,6 +96,11 @@ int main()
                 count++;
                 // commands = head;
             }
+            case REDIR_IN:
+                if (Head == NULL){
+                    printf("Incorrect usage of redirect in");
+                    return 0;
+                }
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
