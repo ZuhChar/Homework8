@@ -100,7 +100,7 @@ int main()
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
-        while (commands != NULL)
+        while (commands->next != NULL)
         {
             printf("%s\n", commands->string);
             commands = commands->next;
