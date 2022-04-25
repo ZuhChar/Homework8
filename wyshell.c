@@ -84,13 +84,13 @@ int main()
                 if (current->command == NULL)
                 {
                     current->command = strdup(lexeme);
-                    printf("Duped word into the current node");
+                    printf("Duped word into the current node\n");
                     // printf("String duplicated");
                 }
                 else
                 {
                     addToList(lexeme, current);
-                    printf("Duped word into the last node");
+                    printf("Duped word into the last node\n");
                     // printf("Command added to list");
                 }
                 count++;
