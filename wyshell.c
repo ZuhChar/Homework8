@@ -71,7 +71,7 @@ int main()
         int count = 0;
         while (count < yylex())
         {
-            switch (lexeme)
+            switch (*lexeme)
             {
             case WORD:
                 if (Head == NULL)
