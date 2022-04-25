@@ -84,11 +84,13 @@ int main()
                 if (current->command == NULL)
                 {
                     current->command = strdup(lexeme);
+                    printf("Duped word into the current node");
                     // printf("String duplicated");
                 }
                 else
                 {
                     addToList(lexeme, current);
+                    printf("Duped word into the last node");
                     // printf("Command added to list");
                 }
                 // commands = head;
@@ -97,7 +99,6 @@ int main()
                 printf("Nothing happened no Word case");
                 break;
             }
-            break;
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
