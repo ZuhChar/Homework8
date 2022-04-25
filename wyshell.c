@@ -84,23 +84,18 @@ int main()
                 if (current->command == NULL)
                 {
                     current->command = strdup(lexeme);
-                    printf(":--: %s\n", current->command);
+                    printf(":--: %s\n", lexeme);
                     // printf("String duplicated");
                 }
                 else
                 {
                     addToList(lexeme, current);
-                    printf(" --: %s\n", current->command);
+                    printf(" --: %s\n", lexeme);
                     // printf("Command added to list");
                 }
                 count++;
                 // commands = head;
             }
-            case REDIR_IN:
-                if (Head == NULL){
-                    printf("Incorrect usage of redirect in");
-                    return 0;
-                }
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
