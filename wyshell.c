@@ -95,9 +95,6 @@ int main()
                 }
                 count++;
                 // commands = head;
-            default:
-                printf("Nothing happened no Word case");
-                break;
             }
         }
         commands = calloc(1, sizeof(Word));
