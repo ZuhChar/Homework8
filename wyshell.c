@@ -69,7 +69,7 @@ int main()
         rtn = parse_line(buff);
         current = calloc(1, sizeof(Node));
         int count = 0;
-        while (1)
+        while (count < yylex())
         {
             switch (rtn)
             {
@@ -93,8 +93,8 @@ int main()
                     printf("Duped word into the last node");
                     // printf("Command added to list");
                 }
+                count++;
                 // commands = head;
-                break;
             default:
                 printf("Nothing happened no Word case");
                 break;
