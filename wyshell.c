@@ -84,28 +84,28 @@ int main()
                 if (current->command == NULL)
                 {
                     current->command = strdup(lexeme);
-                    printf("%s\n", current->command);
+                    printf(":--: %s\n", current->command);
                     // printf("String duplicated");
                 }
                 else
                 {
                     addToList(lexeme, current);
-                    printf("%s\n", current->command);
+                    printf(" --: %s\n", current->command);
                     // printf("Command added to list");
                 }
                 count++;
                 // commands = head;
             }
         }
-        // commands = calloc(1, sizeof(Word));
-        // commands = current->arg_list;
-        // while(commands != NULL){
-        //     commands = commands->prev;
-        // }
-        // while (commands != NULL)
-        // {
-        //     printf("%s\n", commands->string);
-        //     commands = commands->next;
-        // }
+        commands = calloc(1, sizeof(Word));
+        commands = current->arg_list;
+        while(commands != NULL){
+            commands = commands->prev;
+        }
+        while (commands != NULL)
+        {
+            printf("%s\n", commands->string);
+            commands = commands->next;
+        }
     }
 }
