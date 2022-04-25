@@ -90,25 +90,20 @@ int main()
                     addToList(lexeme, current);
                     // printf("Command added to list");
                 }
-                commands = calloc(1, sizeof(Word));
-                commands = current->arg_list;
-                //commands = head;
-                while (commands != NULL)
-                {
-                    printf("%s\n", commands->string);
-                    commands = commands->next;
-                }
-                printf("Increased i");
-                if(count == 20){
-                    return 0;
-                }else{
-                    count++;
-                }
+                // commands = head;
                 break;
             default:
                 printf("Nothing happened no Word case");
+                break;
             }
             break;
+        }
+        commands = calloc(1, sizeof(Word));
+        commands = current->arg_list;
+        while (commands != NULL)
+        {
+            printf("%s\n", commands->string);
+            commands = commands->next;
         }
     }
 }
