@@ -99,6 +99,9 @@ int main()
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
+        while(commands != NULL){
+            commands = commands->prev;
+        }
         while (commands != NULL)
         {
             printf("%s\n", commands->string);
