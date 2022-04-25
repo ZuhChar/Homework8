@@ -55,6 +55,7 @@ void addToList(char *input, Node *list)
         tmp->next->prev = tmp;
         tmp->next->string = strdup(input);
     }
+    list->arg_list = tmp;
 }
 
 int main()
