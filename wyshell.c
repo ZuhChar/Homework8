@@ -98,6 +98,8 @@ int main()
             // case REDIR_OUT:
             //     printf(">\n");
             // }
+              default:
+                break;
             }
         }
         commands = calloc(1, sizeof(Word));
@@ -110,5 +112,6 @@ int main()
             printf("%s\n", commands->string);
             commands = commands->next;
         }
+    rtn=parse_line(NULL);
     }
 }
