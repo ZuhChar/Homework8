@@ -95,9 +95,9 @@ int main()
                 }
                 count++;
                 // commands = head;
-            case REDIR_OUT:
-                printf(">\n");
-            }
+            // case REDIR_OUT:
+            //     printf(">\n");
+            // }
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
