@@ -78,8 +78,7 @@ int main()
                 {
                     Head = calloc(1, sizeof(Node));
                     current = Head;
-                    // printf("head created");
-                    printf(":--:%s\n", lexeme);
+                    // printf("head created"); 
                 }
 
                 if (current->command == NULL)
