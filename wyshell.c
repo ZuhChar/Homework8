@@ -98,6 +98,7 @@ int main()
             // case REDIR_OUT:
             //     printf(">\n");
             // }
+            }
         }
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
