@@ -58,11 +58,11 @@ void addToList(char *input, Node *list)
     list->arg_list = tmp;
 }
 
-void free(Node list){
+void free(Node *list){
     list->command = NULL;
 }
 
-void free_words(Node list){
+void free_words(Node *list){
     list->arg_list = NULL;
 }
 
