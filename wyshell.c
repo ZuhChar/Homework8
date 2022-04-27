@@ -109,6 +109,9 @@ int main()
             case PIPE:
                 printf("|\n");
                 break;
+            case SEMICOLON:
+                printf(";\n");
+                break;
             default:
                 break;
             }
