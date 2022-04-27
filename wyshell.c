@@ -120,7 +120,7 @@ int main()
                 if (ambigOutUse == 1)
                 {
                     printf("Ambiguous output redirect\n");
-                    return 0;
+                    eol = 1;
                 }
                 ambigOutUse = 1;
                 printf(">\n");
