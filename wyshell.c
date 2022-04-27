@@ -72,6 +72,8 @@ int main()
         }
         rtn = parse_line(buff);
         int prevUse = 0;
+        int ambigOutUse = 0;
+        int ambigInUse = 0;
         // current = calloc(1, sizeof(Node));
         while (rtn != EOL)
         {
@@ -84,7 +86,6 @@ int main()
                     current = Head;
                     // printf("head created"); 
                 }
-
                 if (current->command == NULL || prevUse == 1)
                 {
                     prevUse = 0;
@@ -102,10 +103,20 @@ int main()
                 break;
             case REDIR_OUT:
                 prevUse = 1;
+                if(ambigOutUse == 1){
+                    printf("Ambiguous output redirect");
+                    return 0;
+                }
+                ambigOutUse = 1;
                 printf(">\n");
                 break;
             case REDIR_IN:
                 prevUse = 1;
+                if(ambigInUse == 1){
+                    printf("Ambiguous output redirect");
+                    return 0;
+                }
+                ambigInUse = 1;
                 printf("<\n");
                 break;
             case PIPE:
