@@ -172,7 +172,6 @@ int main()
           free_command(current);
           free_words(current);
           tmp=current;
-          current=current->next;
           free(tmp);
         }
     }
