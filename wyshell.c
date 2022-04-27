@@ -58,9 +58,7 @@ void addToList(char *input, Node *list)
     list->arg_list = tmp;
 }
 
-void free()
-
-    int main()
+int main()
 {
     Node *Head = NULL, *current = NULL;
     Word *commands = NULL;
