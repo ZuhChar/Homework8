@@ -118,7 +118,6 @@ int main()
                 if (ambigInUse == 1 || ambigOutUse == 1)
                 {
                     printf("Ambiguous output redirect\n");
-                    rtn == EOL;
                     eol = 1;
                     break;
                 }
