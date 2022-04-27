@@ -141,10 +141,9 @@ int main()
             {
                 break;
             }
-            else
-            {
-                printf(" --: EOL\n");
-            }
+        }
+        if (eol != 1){
+        printf(" --: EOL\n");
         }
         /*
             commands = calloc(1, sizeof(Word));
