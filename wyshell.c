@@ -87,6 +87,7 @@ int main()
 
                 if (current->command == NULL || prevUse == 1)
                 {
+                    prevUse = 0;
                     current->command = strdup(lexeme);
                     printf(":--: %s\n", lexeme);
                     // printf("String duplicated");
