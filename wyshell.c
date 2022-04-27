@@ -58,6 +58,14 @@ void addToList(char *input, Node *list)
     list->arg_list = tmp;
 }
 
+void free(Node list){
+    list->command = NULL;
+}
+
+void free_words(Node list){
+    list->arg_list = NULL;
+}
+
 int main()
 {
     Node *Head = NULL, *current = NULL;
@@ -146,6 +154,7 @@ int main()
         printf(" --: EOL\n");
         }
         /*
+            First attempt at printing the output
             commands = calloc(1, sizeof(Word));
             commands = current->arg_list;
             while(commands != NULL){
@@ -157,15 +166,14 @@ int main()
                 commands = commands->next;
             }
             */
-        current = Head = NULL;
-        // current = Head;
-        // Node *tmp;
-        // while(current) {
-        //   free(current->command);
-        //   free_words(current->arg_list);
-        //   tmp=current;
-        //   current=current->next;
-        //   free(tmp);
-        // }
+        current = Head;
+        Node *tmp;
+        while(current) {
+          free(current);
+          free_words(current);
+          tmp=current;
+          current=current->next;
+          free(tmp);
+        }
     }
 }
