@@ -94,7 +94,14 @@ int main()
                 else
                 {
                     addToList(lexeme, current);
-                    printf(" --: %s\n", lexeme);
+                    if (current->prev->command != WORD)
+                    {
+                        printf(":--: %s\n", lexeme);
+                    }
+                    else
+                    {
+                        printf(" --: %s\n", lexeme);
+                    }
                     // printf("Command added to list");
                 }
                 count++;
