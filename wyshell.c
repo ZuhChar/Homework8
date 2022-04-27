@@ -95,7 +95,7 @@ int main()
                 {
                     addToList(lexeme, current);
                     current->prev = calloc(1,sizeof(Node));
-                    if (current->prev->command == ("|" || "<" || ">"))
+                    if (&current->prev->command == ("|" || "<" || ">"))
                     {
                         printf(":--: %s\n", lexeme);
                     }
