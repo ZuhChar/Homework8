@@ -112,6 +112,7 @@ int main()
             case REDIR_IN:
                 if(ambigInUse == 1 || ambigOutUse == 1){
                     printf("Ambiguous output redirect\n");
+                    rtn == EOL;
                     break;
                 }
                 ambigInUse = 1;
