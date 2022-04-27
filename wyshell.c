@@ -96,7 +96,8 @@ int main()
                 }
                 else
                 {
-                    if(eol == 1){
+                    if (eol == 1)
+                    {
                         break;
                     }
                     addToList(lexeme, current);
@@ -136,14 +137,14 @@ int main()
                 break;
             }
             rtn = parse_line(NULL);
-        }
-        if (eol == 1)
-        {
-            break;
-        }
-        else
-        {
-            printf(" --: EOL\n");
+            if (eol == 1)
+            {
+                break;
+            }
+            else
+            {
+                printf(" --: EOL\n");
+            }
         }
         /*
             commands = calloc(1, sizeof(Word));
