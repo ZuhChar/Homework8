@@ -96,6 +96,9 @@ int main()
                 }
                 else
                 {
+                    if(eol == 1){
+                        break;
+                    }
                     addToList(lexeme, current);
                     printf(" --: %s\n", lexeme);
                     // printf("Command added to list");
