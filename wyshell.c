@@ -121,6 +121,7 @@ int main()
                 {
                     printf("Ambiguous output redirect\n");
                     eol = 1;
+                    break;
                 }
                 ambigOutUse = 1;
                 printf(">\n");
