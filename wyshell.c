@@ -94,6 +94,7 @@ int main()
                 else
                 {
                     addToList(lexeme, current);
+                    current->prev = calloc(1,sizeof(Node));
                     if (current->prev->command != WORD)
                     {
                         printf(":--: %s\n", lexeme);
