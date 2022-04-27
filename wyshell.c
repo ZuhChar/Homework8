@@ -58,7 +58,7 @@ void addToList(char *input, Node *list)
     list->arg_list = tmp;
 }
 
-void free(Node *list){
+void free_command(Node *list){
     list->command = NULL;
 }
 
@@ -169,7 +169,7 @@ int main()
         current = Head;
         Node *tmp;
         while(current) {
-          free(current);
+          free_command(current);
           free_words(current);
           tmp=current;
           current=current->next;
