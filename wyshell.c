@@ -25,7 +25,7 @@ typedef struct word Word;
 struct node
 {
     struct node *node, *prev;
-    char *command;
+    char* command;
     Word *arg_list;
     int input, output, error;
     char *in_file, *out_file, *err_file;
