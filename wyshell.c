@@ -60,14 +60,17 @@ void addToList(char *input, Node *list)
 
 int main()
 {
+    Node *Head = NULL, *current = NULL;
+    Word *commands = NULL;
     while (1)
     {
         printf("$> ");
         prtn = fgets(buff, 4096, stdin);
-        Node *Head, *current = NULL;
-        Word *commands = NULL;
+        if(prtn==NULL) {
+          return 0;
+        }
         rtn = parse_line(buff);
-        current = calloc(1, sizeof(Node));
+        //current = calloc(1, sizeof(Node));
         int count = 0;
         while (rtn != EOL)
         {
@@ -95,13 +98,16 @@ int main()
                 }
                 count++;
                 // commands = head;
-            // case REDIR_OUT:
-            //     printf(">\n");
-            // }
+                break;
+             case REDIR_OUT:
+                 printf(">\n");
+                 break;
               default:
                 break;
             }
+        rtn=parse_line(NULL);
         }
+    /*
         commands = calloc(1, sizeof(Word));
         commands = current->arg_list;
         while(commands != NULL){
@@ -112,6 +118,19 @@ int main()
             printf("%s\n", commands->string);
             commands = commands->next;
         }
-    rtn=parse_line(NULL);
+        */
+      current=Head=NULL;
+      // current = Head;
+      // Node *tmp;
+      // while(current) {
+      //   free(current->command);
+      //   free_words(current->arg_list);
+      //   tmp=current;
+      //   current=current->next;
+      //   free(tmp);
+      // }
+
+
+      
     }
 }
