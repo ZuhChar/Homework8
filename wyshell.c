@@ -95,11 +95,11 @@ int main()
                 {
                     addToList(lexeme, current);
                     commands = current->arg_list;
-                    printf(" --: %s\n", lexeme);
+                    printf(" --: %s\n", lexeme); 
                     // printf("Command added to list");
                 }
                 // commands = head;
-                commands->prev = commands;
+                commands->prev->string = lexeme;
                 break;
             case REDIR_OUT:
                 printf(">\n");
