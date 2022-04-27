@@ -82,20 +82,20 @@ int main()
                 {
                     Head = calloc(1, sizeof(Node));
                     current = Head;
-                    commands = calloc(1, sizeof(Node));
                     // printf("head created"); 
                 }
 
                 if (current->command == NULL ||  == WORD)
                 {
                     current->command = strdup(lexeme);
-                    addToList(lexeme, commands)
+                    commands = current->arg_list;
                     printf(":--: %s\n", lexeme);
                     // printf("String duplicated");
                 }
                 else
                 {
-                    addToList(lexeme, commands);
+                    addToList(lexeme, current);
+                    commands = current->arg_list;
                     printf(" --: %s\n", lexeme);
                     // printf("Command added to list");
                 }
