@@ -102,7 +102,6 @@ int main()
                 // commands = head;
                 break;
             case REDIR_OUT:
-                prevUse = 1;
                 if(ambigOutUse == 1){
                     printf("Ambiguous output redirect\n");
                     return 0;
@@ -111,8 +110,7 @@ int main()
                 printf(">\n");
                 break;
             case REDIR_IN:
-                prevUse = 1;
-                if(ambigInUse == 1){
+                if(ambigInUse == 1 || ambigOutUse == 1){
                     printf("Ambiguous output redirect\n");
                     return 0;
                 }
