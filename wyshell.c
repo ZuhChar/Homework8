@@ -72,7 +72,6 @@ int main()
         }
         rtn = parse_line(buff);
         // current = calloc(1, sizeof(Node));
-        int count = 0;
         while (rtn != EOL)
         {
             switch (rtn)
@@ -85,7 +84,7 @@ int main()
                     // printf("head created"); 
                 }
 
-                if (current->command == NULL ||  commands->prev->string == WORD)
+                if (current->command == NULL || commands->prev->string == WORD)
                 {
                     current->command = strdup(lexeme);
                     commands = current->arg_list;
@@ -99,8 +98,8 @@ int main()
                     printf(" --: %s\n", lexeme);
                     // printf("Command added to list");
                 }
-                count++;
                 // commands = head;
+                commands->prev = commands;
                 break;
             case REDIR_OUT:
                 printf(">\n");
