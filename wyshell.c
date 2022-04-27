@@ -25,7 +25,7 @@ typedef struct word Word;
 struct node
 {
     struct node *node, *prev;
-    char* command;
+    char *command;
     Word *arg_list;
     int input, output, error;
     char *in_file, *out_file, *err_file;
@@ -74,6 +74,7 @@ int main()
         int prevUse = 0;
         int ambigOutUse = 0;
         int ambigInUse = 0;
+        int eol = 0;
         // current = calloc(1, sizeof(Node));
         while (rtn != EOL)
         {
@@ -84,7 +85,7 @@ int main()
                 {
                     Head = calloc(1, sizeof(Node));
                     current = Head;
-                    // printf("head created"); 
+                    // printf("head created");
                 }
                 if (current->command == NULL || prevUse == 1)
                 {
@@ -96,13 +97,14 @@ int main()
                 else
                 {
                     addToList(lexeme, current);
-                    printf(" --: %s\n", lexeme); 
+                    printf(" --: %s\n", lexeme);
                     // printf("Command added to list");
                 }
                 // commands = head;
                 break;
             case REDIR_OUT:
-                if(ambigOutUse == 1){
+                if (ambigOutUse == 1)
+                {
                     printf("Ambiguous output redirect\n");
                     return 0;
                 }
@@ -110,9 +112,11 @@ int main()
                 printf(">\n");
                 break;
             case REDIR_IN:
-                if(ambigInUse == 1 || ambigOutUse == 1){
+                if (ambigInUse == 1 || ambigOutUse == 1)
+                {
                     printf("Ambiguous output redirect\n");
                     rtn == EOL;
+                    eol = 1;
                     break;
                 }
                 ambigInUse = 1;
@@ -131,7 +135,14 @@ int main()
             }
             rtn = parse_line(NULL);
         }
-        printf(" --: EOL\n");
+        if (eol == 1)
+        {
+            break;
+        }
+        else
+        {
+            printf(" --: EOL\n");
+        }
         /*
             commands = calloc(1, sizeof(Word));
             commands = current->arg_list;
