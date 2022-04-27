@@ -94,6 +94,7 @@ int main()
                 else
                 {
                     addToList(lexeme, current);
+                    printf("Added to list");
                     current->prev = calloc(1,sizeof(Node));
                     if (current->arg_list->prev->string == ("|" || "<" || ">"))
                     {
