@@ -85,7 +85,7 @@ int main()
                     // printf("head created"); 
                 }
 
-                if (current->command == NULL ||  == WORD)
+                if (current->command == NULL ||  commands->prev->string == WORD)
                 {
                     current->command = strdup(lexeme);
                     commands = current->arg_list;
