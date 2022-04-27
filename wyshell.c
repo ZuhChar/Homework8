@@ -117,6 +117,7 @@ int main()
             }
             rtn = parse_line(NULL);
         }
+        printf(" --: EOL");
         /*
             commands = calloc(1, sizeof(Word));
             commands = current->arg_list;
