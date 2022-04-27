@@ -104,7 +104,7 @@ int main()
             case REDIR_OUT:
                 prevUse = 1;
                 if(ambigOutUse == 1){
-                    printf("Ambiguous output redirect");
+                    printf("Ambiguous output redirect\n");
                     return 0;
                 }
                 ambigOutUse = 1;
@@ -113,7 +113,7 @@ int main()
             case REDIR_IN:
                 prevUse = 1;
                 if(ambigInUse == 1){
-                    printf("Ambiguous output redirect");
+                    printf("Ambiguous output redirect\n");
                     return 0;
                 }
                 ambigInUse = 1;
