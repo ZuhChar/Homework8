@@ -87,19 +87,16 @@ int main()
                 if (current->command == NULL || current->arg_list->prev->string == WORD)
                 {
                     current->command = strdup(lexeme);
-                    commands = current->arg_list;
                     printf(":--: %s\n", lexeme);
                     // printf("String duplicated");
                 }
                 else
                 {
                     addToList(lexeme, current);
-                    commands = current->arg_list;
                     printf(" --: %s\n", lexeme); 
                     // printf("Command added to list");
                 }
                 // commands = head;
-                commands->prev->string = lexeme;
                 break;
             case REDIR_OUT:
                 printf(">\n");
