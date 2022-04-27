@@ -71,6 +71,7 @@ int main()
             return 0;
         }
         rtn = parse_line(buff);
+        int prevUse = 0;
         // current = calloc(1, sizeof(Node));
         while (rtn != EOL)
         {
@@ -84,7 +85,7 @@ int main()
                     // printf("head created"); 
                 }
 
-                if (current->command == NULL || current->arg_list->prev == WORD)
+                if (current->command == NULL || prevUse == 1)
                 {
                     current->command = strdup(lexeme);
                     printf(":--: %s\n", lexeme);
@@ -99,16 +100,20 @@ int main()
                 // commands = head;
                 break;
             case REDIR_OUT:
+                prevUse = 1;
                 printf(">\n");
                 break;
             case REDIR_IN:
+                prevUse = 1;
                 printf("<\n");
                 break;
             case PIPE:
                 printf("|\n");
+                prevUse = 1;
                 break;
             case SEMICOLON:
                 printf(";\n");
+                prevUse = 1;
                 break;
             default:
                 break;
